@@ -11,8 +11,16 @@ use App\Models\Movie;
 class MainController extends Controller
 {
    public function index() {
-    $movies = movie::all();
-
-        return view("welcome",compact(("movies")));
-    }
+    $movies = movie::where("vote" ,">=",8)->get();
+    $movies = movie::where("vote" ,">=",8)->orwhere("nationality","american   ")->get();
+        return view("welcome",[
+            "movies"=>$movies 
+        ]);
+     }
+     public function show($id){
+        $movie = Movie::findOrFail($id);
+        return view("show",[
+            "movie"=>$movie
+        ]);
+     }
 }

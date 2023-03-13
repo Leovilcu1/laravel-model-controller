@@ -15,7 +15,6 @@
             <h1 class="text-center">Movies</h1>
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-4 g-4">
-                    @foreach ($movies as $movie)
                         <div class="col">
                           <div class="card">
                             <img src="." class="card-img-top" alt="...">
@@ -25,13 +24,12 @@
                               <p class="card-text">lingua :  {{ $movie->nationality }}</p>
                               <p class="card-text">data :  {{ $movie->date }}</p>
                               <p class="card-text">voto :  {{ $movie->vote }}</p>
-                              <a href="{{ route("show",$movie->id) }}" class="btn btn-primary"> 
-                                Vedi Dettagli
+                              <a href="{{ route("home") }}" class="btn btn-primary"> 
+                                torna indietro
                               </a>
                             </div>
                           </div>
                         </div>
-                    @endforeach
             </div>
         </main>
 

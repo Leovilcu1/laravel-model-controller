@@ -14,5 +14,5 @@ use App\Http\Controllers\Guest\MainController;
 |
 */
   
-Route::get("/",[MainController::class,"index"]);
- 
+Route::get("/",[MainController::class,"index"])->name("home");
+Route::get('/movies/{id}',[MainController::class,"show"])->name("show");     
